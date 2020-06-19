@@ -35,38 +35,11 @@ public class EnemyPhase extends AGameState {
 
 	private void handleBoardEnemyEmpty() {
 
-		boolean add = true;
-
 		while (!Lists.INSTANCE.boardEnemy.getArrayList().isMaxedCapacity()) {
 
 			Card card = Lists.INSTANCE.deckEnemy.getArrayList().getRandom();
-			EValue eValue = card.getEValue();
 
-			switch (eValue) {
-
-			case JACK:
-				add = false;
-				break;
-
-			case QUEEN:
-				add = false;
-				break;
-
-			case KING:
-				add = false;
-				break;
-
-			case ACE:
-				add = false;
-				break;
-
-			default:
-				add = true;
-				break;
-
-			}
-
-			if (!add)
+			if (card.getEValue().getPointValue() >= EValue.JACK.getPointValue())
 				continue;
 
 			Lists.INSTANCE.boardEnemy.getArrayList().addLast(card);

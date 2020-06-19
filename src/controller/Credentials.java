@@ -18,7 +18,7 @@ public enum Credentials {
 
 	private Credentials() {
 
-		int optionLines = 3;
+		int optionLines = 4;
 
 		this.lineCastExcludeList.addLast(SelectImageViewPool.class);
 

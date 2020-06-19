@@ -5,12 +5,19 @@ import utils.Text;
 public enum EText {
 
 	BLANK("", TextTypeEnum.INDICATOR),
+	YOU_WON("You won", TextTypeEnum.INDICATOR),
+	YOU_LOST("You lost", TextTypeEnum.INDICATOR),
 	CONTINUE("Continue", TextTypeEnum.OPTION),
 	RESTART("Restart", TextTypeEnum.OPTION),
 	ENEMY_PHASE("Enemy phase", TextTypeEnum.INDICATOR),
 	DISCARD_PHASE("Discard phase", TextTypeEnum.INDICATOR),
 	CHOOSE_CARDS_TO_DISCARD("Choose cards to discard", TextTypeEnum.INDICATOR),
-
+	DRAW_PHASE("Draw phase", TextTypeEnum.INDICATOR),
+	CAPTURE_PHASE("Capture phase", TextTypeEnum.INDICATOR),
+	CAPTURE_ENEMY_CARD("Capture enemy card", TextTypeEnum.OPTION),
+	LET_YOUR_CARD_GET_CAPTURED("Let your card get captured", TextTypeEnum.OPTION),
+	SACRIFICE_TWO_CARDS("Sacrifice two cards", TextTypeEnum.OPTION),
+	
 	;
 
 	private String string = null;

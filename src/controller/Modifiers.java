@@ -9,6 +9,7 @@ public enum Modifiers implements ISaveLoadStateAble {
 	INSTANCE;
 
 	public ArrayList<Card> cardOrder = new ArrayList<Card>();
+	public ArrayList<Card> captureEnemyCards = new ArrayList<Card>();
 
 	private Modifiers() {
 		saveStart();
@@ -22,6 +23,8 @@ public enum Modifiers implements ISaveLoadStateAble {
 	@Override
 	public void loadStart() {
 
+		this.captureEnemyCards.clear();
+
 	}
 
 	@Override
@@ -31,6 +34,8 @@ public enum Modifiers implements ISaveLoadStateAble {
 
 	@Override
 	public void loadState() {
+
+		this.captureEnemyCards.clear();
 
 	}
 

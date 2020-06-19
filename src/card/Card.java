@@ -36,7 +36,20 @@ public class Card implements ImageViewAble, EventHandlerAble {
 
 	@Override
 	public void handleMouseButtonPressedPrimary() {
+
 		Flow.INSTANCE.getCurrentGameState().handleCardPressed(this);
+
+		if (getImageView().isFlippedBack())
+			return;
+
+		System.out.println("value -> " + this.eValue);
+		System.out.println("suit -> " + this.eSuit);
+
+		if (this.eValue.getPointValue() != -1)
+			System.out.println("point value -> " + this.eValue.getPointValue());
+
+		System.out.println();
+
 	}
 
 	public EValue getEValue() {
