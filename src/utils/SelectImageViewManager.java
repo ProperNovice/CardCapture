@@ -154,4 +154,15 @@ public enum SelectImageViewManager {
 		return this.hashMapImageViewAble.size() + this.hashMapEventHandlerAble.size();
 	}
 
+	public ArrayList<ImageViewAble> getSelectedImageViewAbles() {
+
+		ArrayList<ImageViewAble> list = new ArrayList<ImageViewAble>();
+
+		for (ImageViewAble imageViewAble : this.hashMapImageViewAble)
+			list.addLast(imageViewAble);
+
+		return list;
+
+	}
+
 }

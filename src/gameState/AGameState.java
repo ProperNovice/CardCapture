@@ -1,5 +1,7 @@
 package gameState;
 
+import card.Card;
+import controller.Lists;
 import enums.EText;
 import javafx.scene.input.KeyCode;
 import utils.KeyCodeHandler;
@@ -40,6 +42,23 @@ public abstract class AGameState {
 
 	protected final void concealText() {
 		Text.INSTANCE.concealText();
+	}
+
+	public final void handleCardPressed(Card card) {
+
+		if (Lists.INSTANCE.boardEnemy.getArrayList().contains(card))
+			handleCardPressedBoardEnemy(card);
+		else if (Lists.INSTANCE.boardPlayer.getArrayList().contains(card))
+			handleCardPressedBoardPlayer(card);
+
+	}
+
+	protected void handleCardPressedBoardEnemy(Card card) {
+
+	}
+
+	protected void handleCardPressedBoardPlayer(Card card) {
+
 	}
 
 }

@@ -1,10 +1,14 @@
 package controller;
 
+import card.Card;
+import utils.ArrayList;
 import utils.ISaveLoadStateAble;
 
 public enum Modifiers implements ISaveLoadStateAble {
 
 	INSTANCE;
+
+	public ArrayList<Card> cardOrder = new ArrayList<Card>();
 
 	private Modifiers() {
 		saveStart();

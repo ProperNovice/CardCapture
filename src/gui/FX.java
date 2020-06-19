@@ -23,7 +23,7 @@ import utils.ShutDown;
 public class FX extends Application {
 
 	private NumbersPair dimensionsInsets = new NumbersPair(6, 29);
-	private double pixesOnTheLeft = 180;
+	private double pixesOnTheLeft = 0;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
