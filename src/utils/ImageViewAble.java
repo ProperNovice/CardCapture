@@ -6,4 +6,8 @@ public interface ImageViewAble {
 		return MapImageViews.INSTANCE.getImageViewsMap().getValue(this);
 	}
 
+	public default void reverseSelectImageView() {
+		SelectImageViewManager.INSTANCE.reverseSelectImageViewAble(this);
+	}
+
 }
