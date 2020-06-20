@@ -30,10 +30,10 @@ public class StartGame extends AGameState {
 
 		ListImageViewAbles<Card> list = Lists.INSTANCE.boardEnemy;
 
-		list.getArrayList().addLast(new Card(EValue.ACE, ESuit.HEARTS));
+		list.getArrayList().addLast(new Card(EValue.TEN, ESuit.HEARTS));
 		list.getArrayList().addLast(new Card(EValue.FIVE, ESuit.HEARTS));
 		list.getArrayList().addLast(new Card(EValue.KING, ESuit.CLUBS));
-		list.getArrayList().addLast(new Card(EValue.SIX, ESuit.CLUBS));
+		list.getArrayList().addLast(new Card(EValue.SIX, ESuit.DIAMONDS));
 
 		list.relocateImageViews();
 
@@ -46,12 +46,12 @@ public class StartGame extends AGameState {
 
 		ListImageViewAbles<Card> list = Lists.INSTANCE.boardPlayer;
 
-		list.getArrayList().addLast(new Card(EValue.JACK, ESuit.DIAMONDS));
-//		list.getArrayList().addLast(new Card(EValue.KING, ESuit.SPADES));
-		list.getArrayList().addLast(new Card(EValue.ACE, ESuit.SPADES));
-		list.getArrayList().addLast(new Card(EValue.QUEEN, ESuit.DIAMONDS));
-		list.getArrayList().addLast(new Card(EValue.JOKER, ESuit.RED));
-//		list.getArrayList().addLast(new Card(EValue.JOKER, ESuit.BLACK));
+		list.getArrayList().addLast(new Card(EValue.SIX, ESuit.CLUBS));
+		list.getArrayList().addLast(new Card(EValue.THREE, ESuit.DIAMONDS));
+//		list.getArrayList().addLast(new Card(EValue.ACE, ESuit.SPADES));
+		list.getArrayList().addLast(new Card(EValue.QUEEN, ESuit.HEARTS));
+//		list.getArrayList().addLast(new Card(EValue.JOKER, ESuit.RED));
+		list.getArrayList().addLast(new Card(EValue.JOKER, ESuit.BLACK));
 
 		list.relocateImageViews();
 

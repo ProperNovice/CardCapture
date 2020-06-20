@@ -42,6 +42,12 @@ public class Card implements ImageViewAble, EventHandlerAble {
 		if (getImageView().isFlippedBack())
 			return;
 
+		print();
+
+	}
+
+	public void print() {
+
 		System.out.println("value -> " + this.eValue);
 		System.out.println("suit -> " + this.eSuit);
 

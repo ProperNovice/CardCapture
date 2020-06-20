@@ -32,6 +32,24 @@ public class CapturePhase extends AGameState {
 
 	}
 
+	@Override
+	protected void executeTextOption(EText eText) {
+
+		Class<? extends AGameState> gameState = null;
+
+		if (eText.equals(EText.CAPTURE_ENEMY_CARD_OPTION))
+			gameState = CaptureEnemyCard.class;
+
+		else if (eText.equals(EText.LET_YOUR_CARD_GET_CAPTURED))
+			gameState = LetYourCardGetCaptured.class;
+
+		else if (eText.equals(EText.SACRIFICE_TWO_CARDS))
+			gameState = SacrificeTwoCards.class;
+
+		Flow.INSTANCE.executeGameState(gameState);
+
+	}
+
 	private void handleCaptureEnemyCard() {
 
 		ArrayList<ESuit> listESuits = new ArrayList<ESuit>();
@@ -76,14 +94,14 @@ public class CapturePhase extends AGameState {
 		totalPointsValues.print();
 
 		for (Card card : Lists.INSTANCE.boardEnemy)
-			if (card.getEValue().getPointValue() < totalPointsValues.getValue(card.getESuit()))
+			if (card.getEValue().getPointValue() <= totalPointsValues.getValue(card.getESuit()))
 				Modifiers.INSTANCE.captureEnemyCards.addLast(card);
 
 		if (Modifiers.INSTANCE.captureEnemyCards.isEmpty())
 			return;
 
 		this.gameLost = false;
-		EText.CAPTURE_ENEMY_CARD.showText();
+		EText.CAPTURE_ENEMY_CARD_OPTION.showText();
 
 	}
 
