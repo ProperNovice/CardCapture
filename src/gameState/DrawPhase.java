@@ -10,8 +10,8 @@ public class DrawPhase extends AGameState {
 	@Override
 	public void executeGameState() {
 
-		EText.DRAW_PHASE.showText();
-		EText.CONTINUE.showText();
+		EText.DRAW_PHASE.show();
+		EText.CONTINUE.show();
 
 	}
 

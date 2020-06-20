@@ -4,6 +4,7 @@ import card.Card;
 import controller.Lists;
 import enums.EText;
 import utils.ArrayList;
+import utils.Flow;
 import utils.SelectImageViewManager;
 
 public class SacrificeTwoCards extends AGameState {
@@ -19,7 +20,7 @@ public class SacrificeTwoCards extends AGameState {
 		this.cardsPlayerSelected.clear();
 		this.cardEnemySelected = null;
 
-		EText.SACRIFICE_TWO_CARDS_INDICATOR.showText();
+		EText.SACRIFICE_TWO_CARDS_INDICATOR.show();
 
 		for (Card card : Lists.INSTANCE.boardPlayer)
 			if (card.getEValue().getPointValue() < 11)
@@ -45,7 +46,49 @@ public class SacrificeTwoCards extends AGameState {
 
 	}
 
+	@Override
+	protected void handleCardPressedBoardEnemy(Card card) {
+
+		if (this.cardEnemySelected != null && this.cardEnemySelected.equals(card))
+			return;
+
+		if (this.cardEnemySelected != null)
+			SelectImageViewManager.INSTANCE.releaseSelectImageViewAble(this.cardEnemySelected);
+
+		this.cardEnemySelected = card;
+		SelectImageViewManager.INSTANCE.addSelectImageViewAble(this.cardEnemySelected);
+
+		handleText();
+
+	}
+
+	@Override
+	protected void handleCardPressedBoardPlayer(Card card) {
+
+		if (!this.cardsPlayerCanBeSacrificed.contains(card))
+			return;
+
+		if (this.cardsPlayerSelected.contains(card)) {
+
+			this.cardsPlayerSelected.remove(card);
+			SelectImageViewManager.INSTANCE.releaseSelectImageViewAble(card);
+
+		} else {
+
+			this.cardsPlayerSelected.addLast(card);
+			SelectImageViewManager.INSTANCE.addSelectImageViewAble(card);
+
+		}
+
+		handleText();
+
+	}
+
 	private void handleText() {
+
+		concealText();
+
+		EText.SACRIFICE_TWO_CARDS_INDICATOR.show();
 
 		if (this.cardEnemySelected == null)
 			return;
@@ -53,7 +96,31 @@ public class SacrificeTwoCards extends AGameState {
 		if (this.cardsPlayerSelected.size() != 2)
 			return;
 
-		EText.CONTINUE.showText();
+		EText.CONTINUE.show();
+
+	}
+
+	@Override
+	protected void executeTextOption(EText eText) {
+
+		SelectImageViewManager.INSTANCE.releaseSelectImageViews();
+
+		Lists.INSTANCE.boardEnemy.getArrayList().remove(this.cardEnemySelected);
+		Lists.INSTANCE.discardPileEnemy.getArrayList().addFirst(this.cardEnemySelected);
+
+		for (Card card : this.cardsPlayerSelected) {
+
+			Lists.INSTANCE.boardPlayer.getArrayList().remove(card);
+			Lists.INSTANCE.discardPileEnemy.getArrayList().addFirst(card);
+
+		}
+
+		Lists.INSTANCE.boardEnemy.relocateImageViews();
+		Lists.INSTANCE.boardPlayer.relocateImageViews();
+		Lists.INSTANCE.discardPileEnemy.relocateImageViews();
+		Lists.INSTANCE.discardPileEnemy.toFrontFirstImageView();
+
+		Flow.INSTANCE.proceed();
 
 	}
 

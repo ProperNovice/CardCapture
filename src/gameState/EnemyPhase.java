@@ -16,8 +16,8 @@ public class EnemyPhase extends AGameState {
 
 		else {
 
-			EText.ENEMY_PHASE.showText();
-			EText.CONTINUE.showText();
+			EText.ENEMY_PHASE.show();
+			EText.CONTINUE.show();
 
 		}
 

@@ -17,9 +17,9 @@ public class DiscardPhase extends AGameState {
 
 		else {
 
-			EText.DISCARD_PHASE.showText();
-			EText.CHOOSE_CARDS_TO_DISCARD.showText();
-			EText.CONTINUE.showText();
+			EText.DISCARD_PHASE.show();
+			EText.CHOOSE_CARDS_TO_DISCARD.show();
+			EText.CONTINUE.show();
 
 		}
 

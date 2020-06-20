@@ -19,7 +19,7 @@ public class CapturePhase extends AGameState {
 
 		this.gameLost = true;
 
-		EText.CAPTURE_PHASE.showText();
+		EText.CAPTURE_PHASE.show();
 
 		handleCaptureEnemyCard();
 		handleLetYourCardGetCaptured();
@@ -101,7 +101,7 @@ public class CapturePhase extends AGameState {
 			return;
 
 		this.gameLost = false;
-		EText.CAPTURE_ENEMY_CARD_OPTION.showText();
+		EText.CAPTURE_ENEMY_CARD_OPTION.show();
 
 	}
 
@@ -114,7 +114,7 @@ public class CapturePhase extends AGameState {
 			return;
 
 		this.gameLost = false;
-		EText.LET_YOUR_CARD_GET_CAPTURED_OPTION.showText();
+		EText.LET_YOUR_CARD_GET_CAPTURED_OPTION.show();
 
 	}
 
@@ -124,7 +124,7 @@ public class CapturePhase extends AGameState {
 			return;
 
 		this.gameLost = false;
-		EText.SACRIFICE_TWO_CARDS_OPTION.showText();
+		EText.SACRIFICE_TWO_CARDS_OPTION.show();
 
 	}
 

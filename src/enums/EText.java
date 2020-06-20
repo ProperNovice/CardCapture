@@ -35,7 +35,7 @@ public enum EText {
 		this.textTypeEnum = textTypeEnum;
 	}
 	
-	public void showText() {
+	public void show() {
 		Text.INSTANCE.showText(this);
 	}
 

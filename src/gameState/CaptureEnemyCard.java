@@ -120,7 +120,7 @@ public class CaptureEnemyCard extends AGameState {
 	private void handleText() {
 
 		concealText();
-		EText.CAPTURE_ENEMY_CARD_INDICATOR.showText();
+		EText.CAPTURE_ENEMY_CARD_INDICATOR.show();
 
 		if (this.selectedEnemyCard == null)
 			return;
@@ -151,7 +151,7 @@ public class CaptureEnemyCard extends AGameState {
 		if (totalPointsValue < this.selectedEnemyCard.getEValue().getPointValue())
 			return;
 
-		EText.CONTINUE.showText();
+		EText.CONTINUE.show();
 
 	}
 

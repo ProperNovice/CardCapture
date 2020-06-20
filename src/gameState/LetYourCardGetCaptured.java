@@ -18,7 +18,7 @@ public class LetYourCardGetCaptured extends AGameState {
 		this.cardsCanBeCaptured.clear();
 		this.cardSelected = null;
 
-		EText.LET_YOUR_CARD_GET_CAPTURED_INDICATOR.showText();
+		EText.LET_YOUR_CARD_GET_CAPTURED_INDICATOR.show();
 
 		for (Card card : Lists.INSTANCE.boardPlayer)
 			if (card.getEValue().getPointValue() < 11)
@@ -30,7 +30,7 @@ public class LetYourCardGetCaptured extends AGameState {
 		this.cardSelected = this.cardsCanBeCaptured.getFirst();
 		SelectImageViewManager.INSTANCE.addSelectImageViewAble(this.cardSelected);
 
-		EText.CONTINUE.showText();
+		EText.CONTINUE.show();
 
 	}
 
@@ -49,7 +49,7 @@ public class LetYourCardGetCaptured extends AGameState {
 		this.cardSelected = card;
 		SelectImageViewManager.INSTANCE.reverseSelectImageViewAble(this.cardSelected);
 
-		EText.CONTINUE.showText();
+		EText.CONTINUE.show();
 
 	}
 

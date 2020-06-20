@@ -10,8 +10,8 @@ public abstract class EndGame extends AGameState {
 
 		concealText();
 
-		getEText().showText();
-		EText.RESTART.showText();
+		getEText().show();
+		EText.RESTART.show();
 
 	}
 
