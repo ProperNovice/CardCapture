@@ -19,7 +19,9 @@ public class StartGame extends AGameState {
 //		Flow.INSTANCE.getFlow().addLast(EnemyPhase.class);
 //		Flow.INSTANCE.getFlow().addLast(DiscardPhase.class);
 //		Flow.INSTANCE.getFlow().addLast(DrawPhase.class);
-		Flow.INSTANCE.getFlow().addLast(CapturePhase.class);
+//		Flow.INSTANCE.getFlow().addLast(CapturePhase.class);
+
+		Flow.INSTANCE.getFlow().addLast(SacrificeTwoCards.class);
 
 		Flow.INSTANCE.getFlow().addLast(RestartGame.class);
 		Flow.INSTANCE.proceed();
@@ -47,8 +49,8 @@ public class StartGame extends AGameState {
 		ListImageViewAbles<Card> list = Lists.INSTANCE.boardPlayer;
 
 		list.getArrayList().addLast(new Card(EValue.SIX, ESuit.CLUBS));
-		list.getArrayList().addLast(new Card(EValue.THREE, ESuit.DIAMONDS));
-//		list.getArrayList().addLast(new Card(EValue.ACE, ESuit.SPADES));
+//		list.getArrayList().addLast(new Card(EValue.THREE, ESuit.DIAMONDS));
+		list.getArrayList().addLast(new Card(EValue.ACE, ESuit.SPADES));
 		list.getArrayList().addLast(new Card(EValue.QUEEN, ESuit.HEARTS));
 //		list.getArrayList().addLast(new Card(EValue.JOKER, ESuit.RED));
 		list.getArrayList().addLast(new Card(EValue.JOKER, ESuit.BLACK));

@@ -1,10 +1,12 @@
 package gameState;
 
 import card.Card;
+import controller.Lists;
 import controller.Modifiers;
 import enums.EText;
 import enums.EValue;
 import utils.ArrayList;
+import utils.Flow;
 import utils.SelectImageViewManager;
 
 public class CaptureEnemyCard extends AGameState {
@@ -27,6 +29,25 @@ public class CaptureEnemyCard extends AGameState {
 
 	@Override
 	protected void executeTextOption(EText eText) {
+
+		SelectImageViewManager.INSTANCE.releaseSelectImageViews();
+
+		for (Card card : this.selectedPlayerCards) {
+
+			Lists.INSTANCE.boardPlayer.getArrayList().remove(card);
+			Lists.INSTANCE.discardPilePlayer.getArrayList().addFirst(card);
+
+		}
+		
+		Lists.INSTANCE.boardEnemy.getArrayList().remove(this.selectedEnemyCard);
+		Lists.INSTANCE.discardPilePlayer.getArrayList().addFirst(this.selectedEnemyCard);
+
+		Lists.INSTANCE.discardPilePlayer.relocateImageViews();
+		Lists.INSTANCE.discardPilePlayer.toFrontFirstImageView();
+		Lists.INSTANCE.boardEnemy.relocateImageViews();
+		Lists.INSTANCE.boardPlayer.relocateImageViews();
+
+		Flow.INSTANCE.proceed();
 
 	}
 

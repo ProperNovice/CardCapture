@@ -16,8 +16,10 @@ public enum EText {
 	CAPTURE_PHASE("Capture phase", TextTypeEnum.INDICATOR),
 	CAPTURE_ENEMY_CARD_OPTION("Capture enemy card", TextTypeEnum.OPTION),
 	CAPTURE_ENEMY_CARD_INDICATOR("Capture enemy card", TextTypeEnum.INDICATOR),
-	LET_YOUR_CARD_GET_CAPTURED("Let your card get captured", TextTypeEnum.OPTION),
-	SACRIFICE_TWO_CARDS("Sacrifice two cards", TextTypeEnum.OPTION),
+	LET_YOUR_CARD_GET_CAPTURED_OPTION("Let your card get captured", TextTypeEnum.OPTION),
+	LET_YOUR_CARD_GET_CAPTURED_INDICATOR("Let your card get captured", TextTypeEnum.INDICATOR),
+	SACRIFICE_TWO_CARDS_OPTION("Sacrifice two cards", TextTypeEnum.OPTION),
+	SACRIFICE_TWO_CARDS_INDICATOR("Sacrifice two cards", TextTypeEnum.INDICATOR),
 	
 	;
 

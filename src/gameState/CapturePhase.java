@@ -40,10 +40,10 @@ public class CapturePhase extends AGameState {
 		if (eText.equals(EText.CAPTURE_ENEMY_CARD_OPTION))
 			gameState = CaptureEnemyCard.class;
 
-		else if (eText.equals(EText.LET_YOUR_CARD_GET_CAPTURED))
+		else if (eText.equals(EText.LET_YOUR_CARD_GET_CAPTURED_OPTION))
 			gameState = LetYourCardGetCaptured.class;
 
-		else if (eText.equals(EText.SACRIFICE_TWO_CARDS))
+		else if (eText.equals(EText.SACRIFICE_TWO_CARDS_OPTION))
 			gameState = SacrificeTwoCards.class;
 
 		Flow.INSTANCE.executeGameState(gameState);
@@ -114,7 +114,7 @@ public class CapturePhase extends AGameState {
 			return;
 
 		this.gameLost = false;
-		EText.LET_YOUR_CARD_GET_CAPTURED.showText();
+		EText.LET_YOUR_CARD_GET_CAPTURED_OPTION.showText();
 
 	}
 
@@ -124,7 +124,7 @@ public class CapturePhase extends AGameState {
 			return;
 
 		this.gameLost = false;
-		EText.SACRIFICE_TWO_CARDS.showText();
+		EText.SACRIFICE_TWO_CARDS_OPTION.showText();
 
 	}
 
