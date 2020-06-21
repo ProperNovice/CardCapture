@@ -87,8 +87,9 @@ public enum Lists {
 			for (EValue eValue : values)
 				cards.addLast(new Card(eValue, eSuit));
 
-		cards.addLast(new Card(EValue.JOKER, ESuit.BLACK));
-		cards.addLast(new Card(EValue.JOKER, ESuit.RED));
+		cards.addFirst(new Card(EValue.JOKER, ESuit.RED));
+		cards.addFirst(new Card(EValue.JOKER, ESuit.BLACK));
+
 		Modifiers.INSTANCE.cardOrder.addAll(cards);
 
 		ListImageViewAbles<Card> list = null;

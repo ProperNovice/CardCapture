@@ -1,5 +1,6 @@
 package card;
 
+import enums.ELayerZ;
 import enums.ESuit;
 import enums.EValue;
 import utils.EventHandler.EventHandlerAble;
@@ -11,16 +12,16 @@ public class Card implements ImageViewAble, EventHandlerAble {
 
 	private EValue eValue = null;
 	private ESuit eSuit = null;
+	private Card cardClone = null;
 
 	public Card(EValue eValue, ESuit eSuit) {
+		this(eValue, eSuit, ELayerZ.DEFAULT);
+	}
+
+	private Card(EValue eValue, ESuit eSuit, ELayerZ eLayerZ) {
 
 		this.eValue = eValue;
 		this.eSuit = eSuit;
-		createImageView();
-
-	}
-
-	private void createImageView() {
 
 		String path = "cards/";
 		path += eValue.getFileName();
@@ -28,7 +29,7 @@ public class Card implements ImageViewAble, EventHandlerAble {
 		path += this.eSuit;
 		path += ".png";
 
-		new ImageView(path, this);
+		new ImageView(path, this, eLayerZ);
 		getImageView().setBack("cards/back.png");
 		getImageView().flipBack();
 
@@ -64,6 +65,18 @@ public class Card implements ImageViewAble, EventHandlerAble {
 
 	public ESuit getESuit() {
 		return this.eSuit;
+	}
+
+	public Card getCardClone() {
+
+		if (this.cardClone == null) {
+
+			this.cardClone = new Card(eValue, eSuit, ELayerZ.PANEL_CARD);
+			this.cardClone.getImageView().setVisible(false);
+
+		}
+
+		return this.cardClone;
 	}
 
 }

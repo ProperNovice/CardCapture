@@ -106,7 +106,7 @@ public class SacrificeTwoCards extends AGameState {
 		SelectImageViewManager.INSTANCE.releaseSelectImageViews();
 
 		Lists.INSTANCE.boardEnemy.getArrayList().remove(this.cardEnemySelected);
-		Lists.INSTANCE.discardPileEnemy.getArrayList().addFirst(this.cardEnemySelected);
+		Lists.INSTANCE.deckEnemy.getArrayList().addLast(this.cardEnemySelected);
 
 		for (Card card : this.cardsPlayerSelected) {
 
@@ -119,6 +119,8 @@ public class SacrificeTwoCards extends AGameState {
 		Lists.INSTANCE.boardPlayer.relocateImageViews();
 		Lists.INSTANCE.discardPileEnemy.relocateImageViews();
 		Lists.INSTANCE.discardPileEnemy.toFrontFirstImageView();
+		Lists.INSTANCE.deckEnemy.relocateImageViews();
+		Lists.INSTANCE.deckEnemy.toFrontFirstImageView();
 
 		Flow.INSTANCE.proceed();
 

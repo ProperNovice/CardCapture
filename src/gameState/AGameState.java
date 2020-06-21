@@ -2,6 +2,7 @@ package gameState;
 
 import card.Card;
 import controller.Lists;
+import controller.PanelCards;
 import enums.EText;
 import javafx.scene.input.KeyCode;
 import utils.KeyCodeHandler;
@@ -50,6 +51,12 @@ public abstract class AGameState {
 			handleCardPressedBoardEnemy(card);
 		else if (Lists.INSTANCE.boardPlayer.getArrayList().contains(card))
 			handleCardPressedBoardPlayer(card);
+		else if (Lists.INSTANCE.deckEnemy.getArrayList().contains(card))
+			handleCardPressedDeckEnemy(card);
+		else if (Lists.INSTANCE.deckPlayer.getArrayList().contains(card))
+			handleCardPressedDeckPlayer(card);
+		else if (Lists.INSTANCE.discardPilePlayer.getArrayList().contains(card))
+			handleCardPressedDiscardPilePlayer(card);
 
 	}
 
@@ -58,6 +65,22 @@ public abstract class AGameState {
 	}
 
 	protected void handleCardPressedBoardPlayer(Card card) {
+
+	}
+
+	protected final void handleCardPressedDeckEnemy(Card card) {
+		PanelCards.INSTANCE.showPanelEnemy();
+	}
+
+	protected final void handleCardPressedDeckPlayer(Card card) {
+		PanelCards.INSTANCE.showPanelPlayer();
+	}
+
+	protected final void handleCardPressedDiscardPilePlayer(Card card) {
+		PanelCards.INSTANCE.showPanelPlayer();
+	}
+
+	public final void handlePanelPressed() {
 
 	}
 

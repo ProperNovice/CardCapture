@@ -14,11 +14,10 @@ public enum Credentials {
 	public ArrayList<Class<?>> lineCastExcludeList = new ArrayList<Class<?>>();
 	public NumbersPair dFrame, dGapBetweenComponents, dGapBetweenComponentsLineCast, dCard;
 	public NumbersPair cTextPanel, cDeckPlayer, cBoardPlayer, cDiscardPilePlayer, cDeckEnemy, cBoardEnemy,
-			cDiscardPileEnemy;
+			cDiscardPileEnemy, cPanelCards;
+	public double gapBetweenCardsPanel;
 
 	private Credentials() {
-
-		int optionLines = 4;
 
 		this.lineCastExcludeList.addLast(SelectImageViewPool.class);
 
@@ -32,8 +31,7 @@ public enum Credentials {
 		this.dGapBetweenComponentsLineCast = this.dGapBetweenComponents;
 
 		x = 2 * this.gapBetweenBorders + 6 * this.dCard.x + 5 * this.dGapBetweenComponents.x;
-		y = 2 * this.gapBetweenBorders + 2 * this.dCard.y + 2 * this.dGapBetweenComponents.x
-				+ optionLines * this.textHeight;
+		y = 2 * this.gapBetweenBorders + 3 * this.dCard.y + this.dGapBetweenComponents.y;
 		this.dFrame = new NumbersPair(x, y);
 
 		x = this.dFrame.x / 2 - 3 * this.dCard.x - 2.5 * this.dGapBetweenComponents.x;
@@ -49,7 +47,7 @@ public enum Credentials {
 		this.cBoardEnemy = new NumbersPair(x, y);
 
 		x = this.cDiscardPileEnemy.x;
-		y = this.cDiscardPileEnemy.y + this.dCard.y + 2 * this.dGapBetweenComponents.y + optionLines * this.textHeight;
+		y = this.dFrame.y - this.gapBetweenBorders - this.dCard.y;
 		this.cDiscardPilePlayer = new NumbersPair(x, y);
 
 		x = this.cDeckEnemy.x;
@@ -63,6 +61,12 @@ public enum Credentials {
 		x = this.cDeckEnemy.x + this.dCard.x + this.dGapBetweenComponents.x;
 		y = this.cDeckEnemy.y + this.dCard.y + this.dGapBetweenComponents.x;
 		this.cTextPanel = new NumbersPair(x, y);
+
+		x = this.dFrame.x / 2;
+		y = this.dFrame.y / 2;
+		this.cPanelCards = new NumbersPair(x, y);
+
+		this.gapBetweenCardsPanel = (this.dFrame.x - 2 * this.gapBetweenBorders - this.dCard.x) / 13;
 
 	}
 
