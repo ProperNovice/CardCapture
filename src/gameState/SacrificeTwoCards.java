@@ -107,6 +107,7 @@ public class SacrificeTwoCards extends AGameState {
 
 		Lists.INSTANCE.boardEnemy.getArrayList().remove(this.cardEnemySelected);
 		Lists.INSTANCE.deckEnemy.getArrayList().addLast(this.cardEnemySelected);
+		this.cardEnemySelected.getImageView().flip();
 
 		for (Card card : this.cardsPlayerSelected) {
 

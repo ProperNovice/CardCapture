@@ -3,6 +3,7 @@ package gameState;
 import card.Card;
 import controller.Lists;
 import enums.ESuit;
+import enums.EText;
 import enums.EValue;
 import utils.Flow;
 import utils.ListImageViewAbles;
@@ -25,8 +26,13 @@ public class StartGame extends AGameState {
 		Flow.INSTANCE.getFlow().saveStart();
 		Flow.INSTANCE.getFlow().saveState();
 
-		Flow.INSTANCE.proceed();
+		EText.START_GAME.show();
 
+	}
+
+	@Override
+	protected void executeTextOption(EText eText) {
+		Flow.INSTANCE.proceed();
 	}
 
 	protected void addCardsToBoardEnemy() {

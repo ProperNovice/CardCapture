@@ -9,6 +9,7 @@ public enum EText {
 	YOU_LOST("You lost", TextTypeEnum.INDICATOR),
 	CONTINUE("Continue", TextTypeEnum.OPTION),
 	RESTART("Restart", TextTypeEnum.OPTION),
+	START_GAME("Start game", TextTypeEnum.OPTION),
 	ENEMY_PHASE("Enemy phase", TextTypeEnum.INDICATOR),
 	DISCARD_PHASE("Discard phase", TextTypeEnum.INDICATOR),
 	CHOOSE_CARDS_TO_DISCARD("Choose cards to discard", TextTypeEnum.INDICATOR),
