@@ -34,6 +34,11 @@ public enum PanelCards {
 	}
 
 	@SuppressWarnings("unchecked")
+	public void showPanelEnemyDiscardPile() {
+		showPanel(Lists.INSTANCE.discardPileEnemy);
+	}
+
+	@SuppressWarnings("unchecked")
 	public void showPanelEnemy() {
 		showPanel(Lists.INSTANCE.deckEnemy);
 	}
