@@ -22,6 +22,7 @@ public class StartGame extends AGameState {
 		Flow.INSTANCE.getFlow().addLast(DrawPhase.class);
 		Flow.INSTANCE.getFlow().addLast(CapturePhase.class);
 		Flow.INSTANCE.getFlow().addLast(EndTurn.class);
+		Flow.INSTANCE.getFlow().addLast(EndGameWin.class);
 
 		Flow.INSTANCE.getFlow().saveStart();
 		Flow.INSTANCE.getFlow().saveState();

@@ -3,6 +3,7 @@ package gameState;
 import card.Card;
 import controller.Lists;
 import controller.Modifiers;
+import controller.PanelCards;
 import utils.Flow;
 import utils.ListImageViewAbles;
 
@@ -11,6 +12,9 @@ public class RestartGame extends AGameState {
 	@Override
 	public void executeGameState() {
 
+		PanelCards.INSTANCE.hidePanel();
+		concealText();
+		
 		Modifiers.INSTANCE.loadStart();
 
 		Flow.INSTANCE.getFlow().clear();
