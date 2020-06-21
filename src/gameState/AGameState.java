@@ -57,6 +57,8 @@ public abstract class AGameState {
 			handleCardPressedDeckPlayer(card);
 		else if (Lists.INSTANCE.discardPilePlayer.getArrayList().contains(card))
 			handleCardPressedDiscardPilePlayer(card);
+		else if (PanelCards.INSTANCE.contains(card))
+			handlePanelPressed();
 
 	}
 
@@ -68,20 +70,20 @@ public abstract class AGameState {
 
 	}
 
-	protected final void handleCardPressedDeckEnemy(Card card) {
+	private void handleCardPressedDeckEnemy(Card card) {
 		PanelCards.INSTANCE.showPanelEnemy();
 	}
 
-	protected final void handleCardPressedDeckPlayer(Card card) {
-		PanelCards.INSTANCE.showPanelPlayer();
+	private void handleCardPressedDeckPlayer(Card card) {
+		PanelCards.INSTANCE.showPanelPlayerDeck();
 	}
 
-	protected final void handleCardPressedDiscardPilePlayer(Card card) {
-		PanelCards.INSTANCE.showPanelPlayer();
+	private void handleCardPressedDiscardPilePlayer(Card card) {
+		PanelCards.INSTANCE.showPanelPlayerDiscardPile();
 	}
 
 	public final void handlePanelPressed() {
-
+		PanelCards.INSTANCE.hidePanel();
 	}
 
 }

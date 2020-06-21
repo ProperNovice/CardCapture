@@ -31,7 +31,7 @@ public enum Credentials {
 		this.dGapBetweenComponentsLineCast = this.dGapBetweenComponents;
 
 		x = 2 * this.gapBetweenBorders + 6 * this.dCard.x + 5 * this.dGapBetweenComponents.x;
-		y = 2 * this.gapBetweenBorders + 3 * this.dCard.y + this.dGapBetweenComponents.y;
+		y = 2 * this.gapBetweenBorders + 3 * this.dCard.y + 2 * this.dGapBetweenComponents.y;
 		this.dFrame = new NumbersPair(x, y);
 
 		x = this.dFrame.x / 2 - 3 * this.dCard.x - 2.5 * this.dGapBetweenComponents.x;
@@ -59,7 +59,7 @@ public enum Credentials {
 		this.cBoardPlayer = new NumbersPair(x, y);
 
 		x = this.cDeckEnemy.x + this.dCard.x + this.dGapBetweenComponents.x;
-		y = this.cDeckEnemy.y + this.dCard.y + this.dGapBetweenComponents.x;
+		y = this.cDeckEnemy.y + this.dCard.y + (this.dFrame.y - 2 * this.gapBetweenBorders - 2 * this.dCard.y - 4 * this.textHeight) / 2;
 		this.cTextPanel = new NumbersPair(x, y);
 
 		x = this.dFrame.x / 2;

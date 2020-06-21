@@ -24,16 +24,21 @@ public enum PanelCards {
 	}
 
 	@SuppressWarnings("unchecked")
-	public void showPanelPlayer() {
-		showPanelCards(Lists.INSTANCE.discardPilePlayer, Lists.INSTANCE.deckPlayer, Lists.INSTANCE.boardPlayer);
+	public void showPanelPlayerDeck() {
+		showPanel(Lists.INSTANCE.deckPlayer);
+	}
+
+	@SuppressWarnings("unchecked")
+	public void showPanelPlayerDiscardPile() {
+		showPanel(Lists.INSTANCE.discardPilePlayer);
 	}
 
 	@SuppressWarnings("unchecked")
 	public void showPanelEnemy() {
-		showPanelCards(Lists.INSTANCE.deckEnemy, Lists.INSTANCE.boardEnemy);
+		showPanel(Lists.INSTANCE.deckEnemy);
 	}
 
-	private void showPanelCards(@SuppressWarnings("unchecked") ListImageViewAbles<Card>... lists) {
+	private void showPanel(@SuppressWarnings("unchecked") ListImageViewAbles<Card>... lists) {
 
 		this.panel.getArrayList().clear();
 
@@ -53,6 +58,20 @@ public enum PanelCards {
 		this.panelBackground.getImageView().setVisible(true);
 		this.panel.relocateImageViews();
 
+	}
+
+	public void hidePanel() {
+
+		for (Card card : this.panel)
+			card.getImageView().setVisible(false);
+
+		this.panel.getArrayList().clear();
+		this.panelBackground.getImageView().setVisible(false);
+
+	}
+
+	public boolean contains(Card card) {
+		return this.panel.getArrayList().contains(card);
 	}
 
 }

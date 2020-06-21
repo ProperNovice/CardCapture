@@ -15,7 +15,12 @@ public class Card implements ImageViewAble, EventHandlerAble {
 	private Card cardClone = null;
 
 	public Card(EValue eValue, ESuit eSuit) {
+
 		this(eValue, eSuit, ELayerZ.DEFAULT);
+
+		this.cardClone = new Card(eValue, eSuit, ELayerZ.PANEL_CARD);
+		this.cardClone.getImageView().setVisible(false);
+
 	}
 
 	private Card(EValue eValue, ESuit eSuit, ELayerZ eLayerZ) {
@@ -68,14 +73,6 @@ public class Card implements ImageViewAble, EventHandlerAble {
 	}
 
 	public Card getCardClone() {
-
-		if (this.cardClone == null) {
-
-			this.cardClone = new Card(eValue, eSuit, ELayerZ.PANEL_CARD);
-			this.cardClone.getImageView().setVisible(false);
-
-		}
-
 		return this.cardClone;
 	}
 
