@@ -31,7 +31,7 @@ public class Card implements ImageViewAble, EventHandlerAble {
 		String path = "cards/";
 		path += eValue.getFileName();
 		path += "_";
-		path += this.eSuit;
+		path += this.eSuit.toString().toLowerCase();
 		path += ".png";
 
 		new ImageView(path, this, eLayerZ);
