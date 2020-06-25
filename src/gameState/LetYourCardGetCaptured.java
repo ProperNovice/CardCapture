@@ -18,6 +18,8 @@ public class LetYourCardGetCaptured extends AGameState {
 		this.cardsCanBeCaptured.clear();
 		this.cardSelected = null;
 
+		SelectImageViewManager.INSTANCE.addSelectImageViewAble(Lists.INSTANCE.boardEnemy.getArrayList().getFirst());
+
 		EText.LET_YOUR_CARD_GET_CAPTURED_INDICATOR.show();
 
 		for (Card card : Lists.INSTANCE.boardPlayer)
