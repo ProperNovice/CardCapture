@@ -68,6 +68,9 @@ public class SacrificeTwoCards extends AGameState {
 		if (!this.cardsPlayerCanBeSacrificed.contains(card))
 			return;
 
+		if (this.cardsPlayerCanBeSacrificed.size() == 2)
+			return;
+
 		if (this.cardsPlayerSelected.contains(card)) {
 
 			this.cardsPlayerSelected.remove(card);
